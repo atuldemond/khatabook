@@ -23,12 +23,15 @@ app.use(helmet()); // Adds security-related headers
 
 // CORS configuration
 const corsOptions = {
-  origin: "https://66c7eea557638bf4c1a0e650--transcendent-panda-771c91.netlify.app/",
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Allow all methods
-  credentials: true, // Allow cookies and authentication headers
+  origin: "*",
+  optionsSuccessStatus: 200,
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  credentials: true,
 };
 app.use(cors(corsOptions));
+
+ // Enable preflight across-the-board
+
 
 // Session configuration
 
@@ -38,6 +41,7 @@ app.use(cors(corsOptions));
 //   max: 100, // limit each IP to 100 requests per windowMs
 // });
 // app.use(limiter);
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
