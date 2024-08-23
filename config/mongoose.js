@@ -10,4 +10,4 @@ mongoose.connect(process.env.MONGODB_URL, {
 
 };
 module.exports = connectionDB;
-const mongoose = require('mongoose');
+
