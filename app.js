@@ -23,7 +23,7 @@ app.use(helmet()); // Adds security-related headers
 
 // CORS configuration
 const corsOptions = {
-  origin: "http://localhost:1234",
+  origin: "https://khatabook-xw42.onrender.com",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // Allow all methods
   credentials: true, // Allow cookies and authentication headers
