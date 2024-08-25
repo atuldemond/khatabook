@@ -30,8 +30,7 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
- // Enable preflight across-the-board
-
+// Enable preflight across-the-board
 
 // Session configuration
 
@@ -41,7 +40,6 @@ app.use(cors(corsOptions));
 //   max: 100, // limit each IP to 100 requests per windowMs
 // });
 // app.use(limiter);
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -73,7 +71,9 @@ app.post(
 );
 
 app.all("*", (req, res) => {
-  res.status(404).send("You are on the wrong page");
+  res
+    .status(404)
+    .send("You are on the wrong page or you are not allowed to see");
 });
 
 app.listen(PORT, () => {
